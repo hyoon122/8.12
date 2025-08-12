@@ -1,11 +1,12 @@
 import cv2
 from ultralytics import YOLO
 
+# 현재 파일의 위치 기준으로 img 폴더 내 영상 파일 경로 설정
+BASE_DIR = Path(__file__).resolve().parent.parent
+VIDEO_PATH = BASE_DIR / 'img' / 'img_walking.avi'
+
 # 모델 로드 (YOLOv11n)
 model = YOLO('yolov11n.pt')  # 가벼운 모델. 정확도는 중간
-
-# 영상 경로
-video_path = r"C:\Users\405\PythonProject\opencv_project\8.12\img\img_walking.avi"
 
 # 비디오 캡처
 cap = cv2.VideoCapture(video_path)
