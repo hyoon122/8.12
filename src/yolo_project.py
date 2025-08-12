@@ -20,4 +20,11 @@ while True:
     if not ret:
         break
 
+    # YOLO로 객체 탐지
+    results = model(frame, verbose=False)[0]
+
+    # 사람 class만 필터링 (COCO class에서 '0'은 사람)
+    people = [det for det in results.boxes.data if int(det[5]) == 0]
+    person_count = len(people)
+
     
