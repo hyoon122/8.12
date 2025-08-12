@@ -10,7 +10,7 @@ VIDEO_PATH = BASE_DIR / 'img' / 'img_walking.avi'
 model = YOLO('yolo11n.pt')  # 가벼운 모델. 정확도는 중간
 
 # 비디오 캡처
-cap = cv2.VideoCapture(video_path)
+cap = cv2.VideoCapture(VIDEO_PATH)
 
 # 영상 열렸는지 확인
 if not cap.isOpened():
