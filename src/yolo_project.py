@@ -1,5 +1,6 @@
 import cv2
 from ultralytics import YOLO
+from pathlib import Path
 
 # 현재 파일의 위치 기준으로 img 폴더 내 영상 파일 경로 설정
 BASE_DIR = Path(__file__).resolve().parent.parent
