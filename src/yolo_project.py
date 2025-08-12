@@ -48,7 +48,7 @@ while True:
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
     
     # 최대 사람 수도 함께 표시
-    cv2.putText(frame, f'Max So Far: {max_person_count}', (20, 80),
+    cv2.putText(frame, f'Maximum number: {max_person_count}', (20, 80),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
     
     # 화면에 출력
