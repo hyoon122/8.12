@@ -37,5 +37,16 @@ while True:
     # 사람 수 출력
     cv2.putText(frame, f'Total People: {person_count}', (20, 40),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+    
+    # 화면에 출력
+    cv2.imshow("Person Detection", frame)
+
+    # 'q'를 누르면 종료
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# 자원 해제
+cap.release()
+cv2.destroyAllWindows()
 
     
