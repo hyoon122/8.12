@@ -6,8 +6,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 VIDEO_PATH = BASE_DIR / 'img' / 'img_walking.avi'
 
-# 모델 로드 (YOLOv11n)
-model = YOLO('yolov11n.pt')  # 가벼운 모델. 정확도는 중간
+# 모델 로드 (YOLO11n)
+model = YOLO('yolo11n.pt')  # 가벼운 모델. 정확도는 중간
 
 # 비디오 캡처
 cap = cv2.VideoCapture(video_path)
