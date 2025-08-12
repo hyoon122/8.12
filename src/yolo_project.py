@@ -17,6 +17,9 @@ if not cap.isOpened():
     print("영상을 열 수 없습니다.")
     exit()
 
+# 최대 사람 수 저장 변수
+max_person_count = 0
+
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -28,6 +31,10 @@ while True:
     # 사람 class만 필터링 (COCO class에서 '0'은 사람)
     people = [det for det in results.boxes.data if int(det[5]) == 0]
     person_count = len(people)
+
+     # 사람 수 최대값 갱신
+    if person_count > max_person_count:
+        max_person_count = person_count
 
     # 박스 그리기
     for det in people:
@@ -51,4 +58,5 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 
-    
+# 최대 사람 수 출력
+print(f"\n가장 많이 감지된 사람 수: {max_person_count}명")
